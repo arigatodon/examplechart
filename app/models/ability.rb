@@ -10,16 +10,11 @@ class Ability
         elsif user.client?
              can :read, :all
              can :create, :all
-             can :upvote , :all
-             can :downvote, :all
-             can :favorite, :all
              can :destroy, [Lead] , user_id: user.id
-             can :search, :all
               can :edit, [Lead] , user_id: user.id
               can :update, [Lead] , user_id: user.id
               else
              can :read, :all
-             can :search, :all
         end
     # The first argument to `can` is the action you are giving the user
     # permission to do.
