@@ -12,15 +12,18 @@
 
     <div style="height: 1px;" aria-expanded="false" class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li> <a  href="<%= root_path %>">Inicio </a>
+         <li> <a  href="<%= root_path %>">Inicio </a>
+        
+     
       <% if can? :create, @leads %>
-  		  <li><a href="<%=  new_post_path %>">nuevo personal</a></li>
+  		  <li><a href="<%=  new_lead_path %>">nuevo personal</a></li>
       <% end %>
       <li><a href="#menu-toggle"  id="menu-toggle"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>  <% if user_signed_in? %>
-					<li><%= link_to "salir", destroy_user_session_path, method: "delete" %></li>
+          <li><%= link_to "editar usuario", edit_user_registration_path %></li>
+				  <li><%= link_to "salir", destroy_user_session_path, method: "delete" %></li>
 			  <% else  %>		
 					<li><a href="<%= new_user_session_path %>">ingresar</a></li>
 					<li><a href="<%= new_user_registration_path %>">registrarse</a></li>

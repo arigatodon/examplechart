@@ -2,6 +2,7 @@
 
 
  <div id="sankey_basic"  style="width: 900px; height: 300px; ">
+
  </div>
  
 
@@ -31,9 +32,10 @@
         <td><%= lead.name %></td>
         <td><%= lead.email %></td>
         <td><%= lead.stage.name %></td>
-        <td><%= link_to 'Show', lead %>
+        <td><%= link_to 'Show', lead %><% if can? :destroy , lead %>
         <%= link_to 'Edit', edit_lead_path(lead) %>
-        <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %></td>
       </tr>
     <% end %>
   </tbody>
