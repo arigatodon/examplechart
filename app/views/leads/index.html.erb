@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 
- <div id="sankey_basic" style="width: 900px; height: 300px;">
-  
+ <div id="sankey_basic"  style="width: 900px; height: 300px; ">
  </div>
+ 
 
 
-<p>
+<h5 class="container" >
   descargar datos en un :
   <%= link_to "CSV", leads_path(format: "csv") %> o 
   <%= link_to "Excel", leads_path(format: "xls") %>
-</p>
+</h5>
 
 
-<h1>Listing Leads</h1>
-<table>
+<h1 class="container">Listing Personal</h1>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>Stage</th>
-      <th colspan="3"></th>
+      <th colspan="3"> Configuraciones</th>
     </tr>
   </thead>
 
@@ -31,9 +31,9 @@
         <td><%= lead.name %></td>
         <td><%= lead.email %></td>
         <td><%= lead.stage.name %></td>
-        <td><%= link_to 'Show', lead %></td>
-        <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
-        <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', lead %>
+        <%= link_to 'Edit', edit_lead_path(lead) %>
+        <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
