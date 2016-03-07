@@ -14,13 +14,13 @@ u1 = User.create(name: "Igor", lastname: "Venegas", email: "venegas.igor@gmail.c
 u2 =User.create(name: "Caro", lastname: "Hernena", email: "carola@gmail.com", password: "pruebauno")
 u3 =User.create(name: "Wissepi", lastname: "Perez", email: "wissepi@gmail.com", password: "pruebados")
 
-randum = User.all
+
 s1 = Stage.create(name: "Prospect")
 s2 = Stage.create(name: "Contacted")
 s3 = Stage.create(name: "Interested")
- 
+ randum = User.all
 100.times do |u|
- Lead.create(name: Faker::Name.name, email: Faker::Internet.email, stage: s1, user: randum.sample )
+ Lead.create(name: Faker::Name.name, email: Faker::Internet.email, stage: s1, user: randum.sample)
 end
  
 50.times do |u|
